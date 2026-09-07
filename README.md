@@ -75,6 +75,9 @@ nmap -sV -p 22 192.168.64.2
 
 The scan identified TCP port 22 as open and detected an OpenSSH service.
 
+### Nmap SSH Service Discovery
+
+![Nmap scan identifying SSH port 22](screenshots/01-nmap-recon.png)
 ---
 
 ## ✅ Authentication Baseline
@@ -89,6 +92,9 @@ sudo journalctl -u ssh --no-pager | grep "Accepted"
 
 Establishing this baseline provided a comparison between legitimate and suspicious authentication activity.
 
+### Successful SSH Authentication
+
+![Successful SSH authentication](screenshots/02-successful-ssh-login.png)
 ---
 
 ## 🚨 Attack Simulation
@@ -103,6 +109,9 @@ Failed password for invalid user fakeuser from 192.168.64.3
 
 No unauthorized access was obtained during the simulation.
 
+### Failed Authentication Activity
+
+![Failed SSH authentication attempts](screenshots/03-failed-authentication.png)
 ---
 
 ## 🔍 Log Analysis
@@ -121,6 +130,9 @@ The investigation identified:
 Source IP: 192.168.64.3
 Initial Failed Attempts: 3
 ```
+### Authentication Log Investigation
+
+![SSH authentication log investigation](screenshots/04-log-investigation.png)
 
 ---
 
@@ -143,6 +155,9 @@ The detection threshold was configured at:
 ```text
 3 failed authentication attempts
 ```
+### Detection Script
+
+![Bash SSH detection script](screenshots/07-detection-script.png)
 
 ---
 
@@ -157,6 +172,9 @@ Failed Attempts: 3
 Threshold: 3
 Recommended Action: Investigate and consider blocking source.
 ```
+### Initial Detection Alert
+
+![SSH brute-force detection alert](screenshots/05-detection-alert.png)
 
 Additional activity was then generated to validate the detector.
 
@@ -165,10 +183,10 @@ The script successfully updated the count to:
 ```text
 Failed Attempts: 6
 ```
+### Detection Validation
 
+![SSH detection validation](screenshots/06-validated-alert.png)
 This demonstrated that the alert was based on authentication log data rather than a hard-coded result.
-
----
 
 ## 🛡️ Incident Response Recommendations
 
