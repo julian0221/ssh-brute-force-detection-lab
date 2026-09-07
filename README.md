@@ -230,6 +230,11 @@ The project successfully demonstrated the process of moving from raw security ev
 
 The custom Bash detector successfully identified repeated SSH authentication failures and generated an alert after the configured threshold was reached.
 
+## 📄 Incident Report
+
+A detailed SOC-style incident report documenting the detection, investigation, impact assessment, and remediation recommendations is available here:
+
+[View the Incident Report](incident-report.md)
 ---
 
 ## ⚠️ Disclaimer
